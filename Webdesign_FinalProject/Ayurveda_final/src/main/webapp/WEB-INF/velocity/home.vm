@@ -1,0 +1,126 @@
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body  style="padding:0;margin:0">
+ <div style="padding:0;margin:0">
+ <img src="resources/images/Ayurved.jpg">  
+           #parse("/WEB-INF/velocity/headerAll.vm")
+
+  <div style="background-color:black;color:white;padding:0;margin:0">
+   <marquee >Ayurved is one of the ancient techniques to cure and heal.<a href="https://en.wikipedia.org/wiki/Ayurveda" target="_blank">Click Here </a> to know more</marquee>
+   </div>
+<div style="min-height: 10px"></div>
+
+<div class = "form-group" style="text-align: center;color: black">
+<h4>Login</h4>
+<form action="loginsuccessuser.htm"  method="post" >
+        <div class="row">
+        	<div class="col-sm-4" style="text-align: right">
+         		 Username: 
+			</div>
+          	<div class="col-sm-4" style="text-align: right">
+          	 #springBind("userAccount.username")
+          <input type="text" name="username" id="username"  class = "form-control"/>
+          </div>
+          <div class="col-sm-4">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+         </div>
+         <div style="min-height: 10px"></div>
+         <div class="row">
+        	<div class="col-sm-4" style="text-align: right">
+         		 Password:
+       </div>
+       <div class="col-sm-4" style="text-align: right">
+          	 #springBind("userAccount.password") 
+          <input type="password"  name="password" id="password" class = "form-control" />
+          </div>
+          <div class="col-sm-4">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+         </div>
+         <div style="min-height: 10px"> </div>
+        <div class="row">
+        	<div class="col-sm-12" style="text-align: center">
+        	
+         		  <input type="checkbox" name="remember"  value="chk" /> Remember Me
+         	
+          	</div>
+          	
+         </div>
+         <div style="min-height: 10px;color:red" id="error"> $!error </div>
+       
+         
+         <div class="row">
+        	<div class="col-sm-12" style="text-align: center">
+        	
+         		  <input type="submit" value="Login" class="btn btn-success" />
+         	
+          	</div>
+          	
+         </div>
+        
+        </form>
+</div>
+<div>      
+<pre>
+
+ 					 "Ayurved the life saving natural medicinal method which was explored in India by ancient siddhas
+					  and saint before modern era(3000 years ago)
+							
+							The moto of this treatement is 'NOYATEA VAAZHVE, KURAIVATRA SELVAM' 
+							i.e most abundunt wealth of mankind is to live disease-free.	
+							
+					It's amazing fact to predicted by great siddhars that human system can be affected by 4,448 diseases
+					which can be treated by simple herbs, plants, sees, flowers, nuts etc. Mrs. Geetha Uppili would like 
+					to highlight that diseases affect the body onnly when there is an imbalance and preponderance in the
+					VITA-PITHA-KAPA. Development of such imbalance is in turn governed by improper mixing of the 'five 
+					fundamental elements (Space, Air, Fire, Water and Earth)'.
+							
+					There is always a famous saying that food is medicine and medicine is food, which mean s day to day 
+					food which we get from mother nature is an excellent medicine to all health problems, it's just that
+					we need to identify them"
+	
+</pre>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Ayurveda</a>
+    </div>
+	<div class="collapse navbar-collapse" id="footer">
+      <ul class="nav navbar-nav">	  
+	    <li><a href="https://twitter.com/Northeastern" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="twitter-small"><img src="resources/images/twitter.png" width="37px" height="37px"/></a></li>
+		<li><a href="https://www.facebook.com/northeastern" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="facebook-small"><img src="resources/images/facebook.png" width="37px" height="37px"/></a></li>
+		<li><a href="https://plus.google.com/100884222241386918943" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="gplus-small"><img src="resources/images/gplus.png"  width="37px" height="37px"/></a></li>
+		<li><a href="https://www.linkedin.com/edu/northeastern-university-18506" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="linkedin-small"><img src="resources/images/linkedin.png" width="37px" height="37px"/></a></li>
+		</ul>
+
+	
+    <ul class="nav navbar-nav navbar-right">
+	  <li class="dropup">
+		  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact US <span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+		  <li><a href="tel:16179915682">Call   &#x2706;</a></li>
+		  <li><a href="sms:+16179915682?body=write your short message here..!!">SMS &#x2709;</a></li>
+		  <li><a href="mailto:upadhyay.arjun61@gmail.com">E-mail &#x212E;</a></li>
+		  </ul>
+	  </li>
+	  
+	  <li><p class="navbar-text">© Copyright 2016 & **Terms & Conditions apply</p></li>
+      
+      
+    </ul>
+  </div>
+  </div>
+</nav>
+</div>
+
+</body>
+</html>

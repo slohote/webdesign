@@ -1,0 +1,44 @@
+<html>
+<head>
+
+<title>FAQ</title>
+</head>
+<body>
+<br><br>
+<div>
+<div class="row">
+
+            <div class="well well-sm" style="text-align: center;font-family: Comic Sans MS, cursive, sans-serif;color: maroon;">
+                <h1>Frequently Asked Questions:</h1>
+            </div>
+</div>
+<div class="row" >
+<div class="col-sm-12" style="text-align: center">
+ #if($faqList.size() == 0)
+ <font color="red">No Questions posted</font>
+  #else
+   <br>
+           <table class="table">
+          
+	#foreach($faq in $faqList)
+	<tr class="danger">
+	<td style = "color:red">
+   	<strong>Question $velocityCount :</strong>	${faq.question}
+   	</td>
+   	</tr>
+   	<tr>
+	<td>
+   	<strong>Answer $velocityCount :</strong>	${faq.answer}
+   	</td>
+   	
+   	</tr>  	
+ 	#end
+ 	
+#end	
+ 
+ </div>
+ </div>
+
+
+</body>
+</html>

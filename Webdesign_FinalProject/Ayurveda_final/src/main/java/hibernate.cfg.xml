@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Ayurveda_Final</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Love@sh61</property>
+
+		<property name="hibernate.hbm2ddl.auto">Update</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+
+  
+  
+  <mapping class="com.neu.me.pojo.UserAccount"/>
+  <mapping class="com.neu.me.pojo.Person"/>
+  <mapping class="com.neu.me.pojo.Herbs"/>
+  <mapping class="com.neu.me.pojo.Category"/>
+  <mapping class="com.neu.me.pojo.SubCategory"/>
+  <mapping class="com.neu.me.pojo.Items"/>
+  <mapping class="com.neu.me.pojo.Comments"/>
+  <mapping class="com.neu.me.pojo.Like"/>
+  <mapping class="com.neu.me.pojo.FAQ"/>
+
+  
+  
+ </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,310 @@
+<html>
+<head>
+
+<title>Herb</title>
+</head>
+<body>
+<div>
+<div class="row">
+
+            <div class="well well-sm" style="text-align: center;font-family: Comic Sans MS, cursive, sans-serif;color: maroon;"><h1>Herbs</h1>
+            </div>
+</div>
+<div style="min-height: 10px"></div>
+ 
+ <div class="row">
+ <div class="col-sm-6">
+ <input type="button" value="Add Herb" onclick="displayDiv()" class="btn btn-success"/>
+ </div>
+ 
+ </div> 
+ 
+  
+ <div style="min-height: 30px"></div>
+ <div id = "addHerb" style="display:none">
+ <h4>Add Herb</h4>    
+ <div class="row" >
+   <div class="col-sm-12">
+<div class = "form-group">
+<form action="addherb.htm"  method="post" onsubmit="return ValidateHerb()" enctype="multipart/form-data" >
+        <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Herb Name: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.herbName")    
+	          <input type="text" name="herbName" id="alphanum1" class = "form-control" required/>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+      
+        <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Scientific Name: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.scientificname")    
+	          <input type="text" name="scientificname" id="text1" class = "form-control" required/>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+        <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Image Name: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.imageName")    
+	          <input type="text" name="imageName" id="alphanum2" class = "form-control" required/>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+        <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Image: (size 400 X 400)
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.herbImage")    
+	          <input type="file" name="herbImage" class = "form-control" id="filetype" required/>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+       <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Description: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.description")    
+	          <textarea name="description" id="textarea1" class = "form-control" pattern = "[A-Za-z0-9.,? ]{1,2000}" title="Only Alphanumeric 2000 characters required" required></textarea>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+      
+       <div class="row">
+       		  <div class="col-sm-12">
+        		 #if($error)
+		         $error
+		         
+		         #end
+		      </div>
+       </div>
+         <div class="row">
+        	<div class="col-sm-12">
+        	
+         		 <input type="submit" value="Add" class="btn btn-success" />
+         	
+          	</div>
+          	
+        </div>
+        
+        </form>
+</div>
+</div>
+</div>
+</div>
+<div id = "editHerb" style="display:none">
+ <h4>Edit Herb</h4>    
+ <div class="row" >
+   <div class="col-sm-12">
+<div class = "form-group">
+<form action="editherb.htm"  method="post" >
+        <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Herb Name: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.herbName")    
+	          <input type="text" name="herbName" id = "herbname1" class = "form-control" pattern = "[A-Za-z0-9 ]{1,50}" title="Only Alphanumeric required" required/>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+      
+        <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Scientific Name: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.scientificname")    
+	          <input type="text" name="scientificname" id="scientificname1" class = "form-control" pattern = "[A-Za-z0-9 ]{1,50}" title="Only Alphanumeric required" required/>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+       <div class="row">
+	        	<div class="col-sm-3" >
+	         		 Description: 
+				</div>
+	          	<div class="col-sm-4" >
+	  		#springBind("herb.description")    
+	          <textarea name="description" id="description1" class = "form-control" pattern = "[A-Za-z0-9 ]{1,2000}" title="Only Alphanumeric 2000 characters required" required></textarea>
+	          </div>
+	          <div class="col-sm-5">
+	          <font color="red">${status.errorMessage}</font>
+	          </div>
+       </div>
+       
+       <div class="row">
+       		  <div class="col-sm-12">
+        		 #if($error)
+		         $error
+		         
+		         #end
+		      </div>
+       </div>
+      
+         <div class="row">
+        	<div class="col-sm-12">
+	#springBind("herb.imageName")    
+	<input type = "hidden" name="imageName" id = "imagename1"  />
+        		<input type = "hidden" name="herbid" id = "herbid1"  />
+         		 <input type="submit" value="Update" class="btn btn-success" />
+         	
+          	</div>
+          	
+        </div>
+        
+        </form>
+</div>
+</div>
+</div>
+</div>
+
+#if($message == "Herb Alreay Exist")
+<font color="green">$message</font>
+#else
+<div class="row" >
+<div class="col-sm-12" style="text-align: center">
+ #if($herbList.size() == 0)
+ <font color="red">No Data found</font>
+  #else
+  <table class="table table-bordered">
+  <thead>
+  <tr class="success">
+      <th>Herb Id </th>
+      <th> Herb Name </th>
+      <th> Scientific Name </th>
+      <th> Image </th>
+      <th> Delete </th>
+      <th> Edit </th>
+  </tr>  
+  </thead>        
+	#foreach($herbs in $herbList)
+	<tbody>
+   	<tr id="herb${herbs.herbid}">
+   		<td>${herbs.herbid}</td>
+   		<td><a class="thumbnail" href="#" data-placement="top" data-toggle="popover" data-trigger="hover" data-content="${herbs.description}">${herbs.herbName}</a></td>
+   		<td>${herbs.scientificname}</td>
+   		<td><img src="resources/images/herbs/${herbs.imageName}" width="60px" height = "60px" />  </td>
+   		<td><a href="#" onclick= "deleteRow(${herbs.herbid})" class="glyphicon glyphicon-trash" ></a></td>
+   		<td><a href="#" onclick= "displayDivEdit(${herbs.herbid},'${herbs.herbName}','${herbs.scientificname}','${herbs.description}','${herbs.imageName}')" class="glyphicon glyphicon-pencil" ></a></td>
+   	</tr>
+   	</tbody>
+ 	#end
+ 	</table>
+#end	
+ 
+ </div>
+ </div>
+ 
+#end
+<script>
+function displayDiv()
+{
+	var dividadd = document.getElementById("addHerb");
+	var dividedit = document.getElementById("editHerb");
+	dividadd.style.display = "block";
+	dividedit.style.display = "none";
+}
+function displayDivEdit(herbid1,herbname1,scientificname1,description1,imagename1)
+{
+
+	var dividadd = document.getElementById("addHerb");
+	var dividedit = document.getElementById("editHerb");
+	dividadd.style.display = "none";
+	dividedit.style.display = "block";
+	var herbnamebox = document.getElementById("herbname1");
+	var scientificbox = document.getElementById("scientificname1");
+	var descriptionbox = document.getElementById("description1");
+	var hiddenbox = document.getElementById("herbid1");
+	var imagenamebox = document.getElementById("imagename1");
+	herbnamebox.value = herbname1;
+	scientificbox.value = scientificname1;
+	descriptionbox.value = description1;
+	imagenamebox.value = imagename1;
+	
+	hiddenbox.value = herbid1;
+}
+ var xmlHttp;
+        xmlHttp = GetXmlHttpObject();
+ function deleteRow(herbid) {
+ var r = confirm("Are you sure you want to Delete?");
+ if(r==true)
+ {
+            if (xmlHttp == null)
+            {
+                alert("Your browser does not support AJAX!");
+                return;
+            }
+
+            var query = "herbid=" + herbid;
+
+            xmlHttp.onreadystatechange = function stateChanged()
+            {
+                if (xmlHttp.readyState == 4)
+                {
+                	var rowid = "herb"+herbid;
+                    var row = document.getElementById(rowid);
+                    
+                    row.parentNode.removeChild(row);
+                }
+            };
+            xmlHttp.open("POST", "deleteherb.htm", true);
+            xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlHttp.send(query);
+            
+            return false;
+            }
+        }
+        function GetXmlHttpObject()
+        {
+            var xmlHttp = null;
+            try
+            {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            } catch (e)
+            {
+                // Internet Explorer
+                try
+                {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e)
+                {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+
+</script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+</div>
+
+</body>
+</html>

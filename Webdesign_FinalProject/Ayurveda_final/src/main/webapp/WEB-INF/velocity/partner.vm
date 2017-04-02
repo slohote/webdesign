@@ -1,0 +1,118 @@
+<div class="container">
+<link href="resources/css/style.css" rel="stylesheet">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="home.html">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">	  
+	  <li><a href="aboutUs.html">About us</a></li>
+      <li><a href="history.html">A bit about Ayurveda</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+	  <li><a href="#">FAQs</a></li>
+	  	  
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+	  <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign In &#9759;<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+      <li><a href="signIn.html">Sign In</a></li>
+      <li><a href="register.html">Create Account</a></li>
+      </ul>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br>
+<h3 id="heading">
+Our proud partners..!!
+</h3>
+<br>
+  <div class="media">
+    <div class="media-left">
+      <img src="images/partner1.jpg" class="media-object" style="width:150px">
+    </div>
+    <div class="media-body">
+      <p><b>Healthy Ayurveda</b> provides the most innovative approach helping to bring the ancient wisdom of Ayurveda to the modern world on a global scale. We aim to provide simple, elegant and powerful lifestyle modifiers for those seeking to find greater balance, connecting with purpose and to improve one’s overall health and well-being.</p>
+    </div>
+  <hr>
+  
+  <!-- Right-aligned media object -->
+    <div class="media-body">
+      
+      <p><b>DharmaSmart.com</b> is a shopping destination offering a range of products targeted to the mindful; the eco-friendly; yoga practitioners; people interested in Ayurveda, health and beauty, meditation; spiritual people and anyone choosing to live a conscious life.</p>
+    </div>
+    <div class="media-right">
+      <img src="images/partner2.jpg" class="media-object" style="width:150px">
+    </div>
+	<hr>
+	<div class="media-left">
+      <img src="images/partner3.jpg" class="media-object" style="width:150px">
+    </div>
+    <div class="media-body">
+      <p><b>Ayurveda Next Door</b> is a global directory and multi-author blog for Ayurveda. Locate practitioners, treatment providers, Ayurveda products, schools, centers and clinics worldwide. Discover the Ayurveda community around you</p>
+    </div>
+  <hr>
+  
+  <!-- Right-aligned media object -->
+    <div class="media-body">
+      
+      <p>At the heart of <b>The Raj</b> are profound ayurveda treatment programs that help restore balance and reawaken the body’s natural healing mechanisms. Because the treatments are only a part of a comprehensive approach to creating health, guests at The Raj also gain an understanding of how all the various aspects of their lives are interrelated and contribute either positively or negatively to overall well being. Not only do our guests go home feeling renewed in body and spirit, they also report the benefits from their stay continually increase, long after they have returned home.</p>
+    </div>
+    <div class="media-right">
+      <img src="images/partner4.jpg" class="media-object" style="width:150px">
+    </div>
+  <hr>
+  <div class="media-left">
+      <img src="images/partner5.jpg" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <p><b>Northeastern University</b> (NU, formerly NEU) is a private research university in Boston, Massachusetts, established in 1898. It is categorized as an R1 institution (Doctoral Universities: Highest Research Activity) by the Carnegie Classification of Institutions of Higher Education.</p>
+    </div>
+  
+</div>
+
+<br><br><br><br>
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#footer">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Ayurveda</a>
+    </div>
+	<div class="collapse navbar-collapse" id="footer">
+      <ul class="nav navbar-nav">	  
+	    <li><a href="https://twitter.com/Northeastern" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="twitter-small"></a></li>
+		<li><a href="https://www.facebook.com/northeastern" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="facebook-small"></a></li>
+		<li><a href="https://plus.google.com/100884222241386918943" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="gplus-small"></a></li>
+		<li><a href="https://www.linkedin.com/edu/northeastern-university-18506" onclick="window.open(this.href, 'mywin','left=20,top=20,width=800,height=700,toolbar=1,resizable=0'); return false;" id="social" class="linkedin-small"></a></li>
+		</ul>
+
+	
+    <ul class="nav navbar-nav navbar-right">
+	  <li class="dropup">
+		  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact US <span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+		  <li><a href="tel:16179915682">Call   &#x2706;</a></li>
+		  <li><a href="sms:+16179915682?body=write your short message here..!!">SMS &#x2709;</a></li>
+		  <li><a href="mailto:upadhyay.arjun61@gmail.com">E-mail &#x212E;</a></li>
+		  </ul>
+	  </li>
+	  <li><a href="#">Partners</a></li>
+      <li><a href="copyright.html">© Copyright 2016 & **Terms & Conditions</a></a></li>
+    </ul>
+  </div>
+  
+</nav>
+</div>

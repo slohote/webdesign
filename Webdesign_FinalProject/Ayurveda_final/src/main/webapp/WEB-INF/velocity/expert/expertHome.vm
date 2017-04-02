@@ -1,0 +1,51 @@
+<html>
+<head>
+  <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script>
+	<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+<link href="resources/css/simple-sidebar.css" rel="stylesheet">
+<title>Admin</title>
+</head>
+
+<body style="padding:0;margin:0">
+
+  <div id="wrapper" >
+#parse("/WEB-INF/velocity/expert/header.vm")
+        
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                       <!--  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+                      #if($task == "viewherb")
+                      #parse("/WEB-INF/velocity/herbs.vm")
+                       #elseif($task == "addFAQ")
+                       #parse("/WEB-INF/velocity/admin/addFAQ.vm")
+                        #elseif($task == "addPerson")
+                       #parse("/WEB-INF/velocity/addPerson.vm")
+                       #elseif($task == "additem")
+                       #parse("/WEB-INF/velocity/admin/addItems.vm")
+                       #else
+                       #parse("/WEB-INF/velocity/blog.vm")
+                      #end
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    
+  </div>
+</div>
+ <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    <script src="resources/js/Validation.js"></script>
+</body>
+</html>

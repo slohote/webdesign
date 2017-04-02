@@ -1,0 +1,150 @@
+<html>
+<head>
+
+<title>Blog</title>
+</head>
+<body>
+<div>
+<h4><small>RECENT POSTS</small></h4>
+      <hr>
+      <div class="well well-sm" style="text-align: center;font-family: Comic Sans MS, cursive, sans-serif;color: maroon;"><center><h2>Ayurved Blog</h2></center></div>
+      #foreach($item in $itemlist)
+      <h5><b style="color:maroon"> Posted On </b><span class="glyphicon glyphicon-time"></span> ${item.postDate} <span style="float:right"><a href="report.pdf?itemid=${item.itemId}" class="glyphicon glyphicon-download-alt" target="_blank" ></a></span></h5>
+      <p><b style="color:maroon">Title : </b>${item.itemName}</p>
+      <p><b style="color:maroon">Description : </b>${item.description}</p>
+      <p><b style="color:maroon">Benifits : </b>${item.benefits}</p>
+      <p><b style="color:maroon">Procedure :</b> ${item.procedurestep}</p>
+      <p><b style="color:maroon"> Comments:</b> <span class="badge">${item.comments.size()}</span>  Like: <span class="badge" id="like${item.itemId}">${item.like.size()}</span> <a href="#" id="likeButton" onclick="showResults(${item.itemId});"><img src="resources/images/like.jpg" height="25" width="25" /></a></p><br>
+      
+      #foreach($comment in $item.comments)
+      <div class="row" id="row${comment.commentId}">
+        <div class="col-sm-2 text-center">
+          <img src="resources/images/user.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-9">
+          <h5> <b style="color:maroon">${comment.person.firstName}</b> <small>${comment.commentDate}</small></h5>
+          <p>${comment.commentDesc}</p>
+          
+        </div>
+        #if($role == "admin")
+        <div class="col-sm-1">
+        <a href="#" onclick= "deleteRow(${comment.commentId})" class="glyphicon glyphicon-trash" ></a>
+        </div>
+        #end
+      </div>
+      
+      #end
+      <h5 style="color:maroon">Leave a Comment:</h5>
+      <form action="commentItems.htm" method="post">
+        <div class="form-group">
+          <textarea class="form-control" name="comment" rows="3" id="textarea${item.itemId}" required></textarea>
+        </div>
+        <input type="hidden" name = "itemid" value="${item.itemId}"/>
+        <input type="submit" class="btn btn-success" value="Comment"/>
+      </form>
+      <hr>
+      #end
+</div>
+<script>
+ var xmlHttp;
+        xmlHttp = GetXmlHttpObject();
+ function showResults(itemID) {
+
+            if (xmlHttp == null)
+            {
+                alert("Your browser does not support AJAX!");
+                return;
+            }
+
+            var query = "itemid=" + itemID;
+
+            xmlHttp.onreadystatechange = function stateChanged()
+            {
+                if (xmlHttp.readyState == 4)
+                {
+                	var userliked = xmlHttp.responseText;
+                	
+                	var rowid = "like"+itemID;
+                    var row = document.getElementById(rowid);
+                    var valrow = parseInt(row.innerHTML);
+                    row.scrollIntoView()
+                  
+                    
+                    var incr = 1;
+                   
+                	if(userliked.toLowerCase().trim() == "present")
+                	{
+                		
+                	
+                		row.innerHTML = valrow - 1;
+                	}
+                	else
+                	{
+                		
+                		
+                		row.innerHTML = valrow +1 ;
+                    }
+                }
+            };
+            xmlHttp.open("POST", "likeItems.htm", true);
+            xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlHttp.send(query);
+            
+            return false;
+            
+        }
+   function deleteRow(commentID) {
+ var r = confirm("Are you sure you want to Delete?");
+ if(r==true)
+ {
+            if (xmlHttp == null)
+            {
+                alert("Your browser does not support AJAX!");
+                return;
+            }
+
+            var query = "commentid=" + commentID;
+
+            xmlHttp.onreadystatechange = function stateChanged()
+            {
+                if (xmlHttp.readyState == 4)
+                {
+                	var rowid = "row"+commentID;
+                    var row = document.getElementById(rowid);
+                    
+                    row.parentNode.removeChild(row);
+                }
+            };
+            xmlHttp.open("POST", "deleteCommentItems.htm", true);
+            xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlHttp.send(query);
+            
+            return false;
+            }
+        }
+  
+    function GetXmlHttpObject()
+        {
+            var xmlHttp = null;
+            try
+            {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            } catch (e)
+            {
+                // Internet Explorer
+                try
+                {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e)
+                {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+</script>
+
+</script>
+</body>
+</html>

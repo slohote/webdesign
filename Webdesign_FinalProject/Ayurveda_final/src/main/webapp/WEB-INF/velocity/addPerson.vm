@@ -1,0 +1,125 @@
+<html>
+<head>
+
+<title>Profile</title>
+</head>
+<body>
+<div>
+<div class="row">
+
+            <div class="well well-sm" style="text-align: center;font-family: Comic Sans MS, cursive, sans-serif;color: maroon;">
+                <h1>Update Profile</h1>
+            </div>
+</div>
+
+ <font color="green">$message</font>
+ <div style="min-height: 30px"></div>
+ <div id = "addUser" style="block">
+    
+ <div class="row" >
+   <div class="col-sm-12">
+<div class = "form-group">
+<form class="form-horizontal" action="updateProfile.htm"  method="post" onsubmit="return ValidateData()" >
+        <div class="form-group">
+	        	<label class="control-label col-sm-2" for="fname">First Name:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.person.firstName")
+	          <input type="text" name="${status.expression}" id="text1" value="$!status.value" class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+          <div class="form-group">
+	        	<label class="control-label col-sm-2" for="fname">Last Name:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.person.lastName")
+	          <input type="text" name="${status.expression}" value="$!status.value"  id="text2" class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+       <div class="form-group">
+	        	<label class="control-label col-sm-2" for="email">Email:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.person.email")
+	          <input type="text" name="${status.expression}" value="$!status.value" id="email1"  class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+       <div class="form-group">
+	        	<label class="control-label col-sm-2" for="phone">Primary Contact:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.person.phone")
+	          <input type="text" name="${status.expression}" value="$!status.value" id="phone1"  class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+        <div class="form-group">
+	        	<label class="control-label col-sm-2" for="dob">Age:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.person.age")
+	          <input type="text" name="${status.expression}" value="$!status.value" id = "num1"  class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+       <div class="form-group">
+	        	<label class="control-label col-sm-2" for="pwd">Username:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.username")
+	          <input type="text" name="${status.expression}" value="$!status.value" id="username1"  class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+       <div class="form-group">
+	        	<label class="control-label col-sm-2" for="pwd">Password:</label>
+	          	<div class="col-sm-5" >
+	  		    #springBind("userAccount.password")
+	          <input type="password" name="${status.expression}" value="$!status.value" id="password1" class = "form-control" required/>
+	          </div>
+	         <div class="col-sm-8">
+          <font color="red">${status.errorMessage}</font>
+          </div>
+       </div>
+       <div class="row">
+       		  <div class="col-sm-12">
+        		 #if($error)
+		         $error
+		         
+		         #end
+		      </div>
+       </div>
+         <div class="row">
+        	<div class="col-sm-12">
+        	#springBind("userAccount.id")
+        	<input type="hidden" name="${status.expression}" value="$!status.value" />
+        	#springBind("userAccount.person.personid")
+        	<input type="hidden" name="${status.expression}" value="$!status.value" />
+         	#springBind("userAccount.role")
+        	<input type="hidden" name="${status.expression}" value="$!status.value" />
+         	#springBind("userAccount.status")
+        	<input type="hidden" name="${status.expression}" value="$!status.value" />
+         		 <input type="submit" value="Update" class="btn btn-success" />
+         	
+          	</div>
+          	
+        </div>
+        
+        </form>
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

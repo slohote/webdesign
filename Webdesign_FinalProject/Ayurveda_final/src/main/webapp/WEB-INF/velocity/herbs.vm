@@ -1,0 +1,36 @@
+<div>
+<link href="resources/css/thumbnail-gallery.css" rel="stylesheet">
+<div style="min-height: 10px"></div>
+<div class="row">
+
+            <div class="well well-sm" style="text-align: center;font-family: Comic Sans MS, cursive, sans-serif;color: maroon;">
+                <h1>Herb Gallery</h1>
+            </div>
+</div>
+ <div class="row">
+<div class="col-sm-12">
+            #if($herbList.size() == 0)
+           		<div style="padding:20px"> <font color="red">No Data found</font></div>
+            #else
+            <div class= row>
+            	#foreach($herb in $herbList)
+            <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                <h5>${herb.herbName} ( ${herb.scientificname} )</h5>
+                <a class="thumbnail" href="#" data-placement="top" data-toggle="popover" data-trigger="hover" data-content="${herb.description}">
+                
+                    <img class="img-responsive" src="resources/images/herbs/${herb.imageName}" alt="${herb.imageName}">
+                </a>
+            </div>
+			#end
+			</div>
+			#end	
+        </div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+</div>
